@@ -1,0 +1,171 @@
+@import "bootstrap";
+body { padding-top: 60px; }
+@import "bootstrap-responsive";
+
+.navbar .myTestType 
+{
+  margin-left: 20px;
+  display: block;
+  float: left;
+  padding: 8px 20px 12px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.navbar .myTestType:hover {
+  text-decoration: none;
+}
+
+.backgroundColorBlue
+{
+  background-color: #EEEEFF
+}
+
+.navbar-white
+{
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+.white {color:#FFFFFF;}      /* unvisited link */
+.white:visited {color:#FFFFFF;}  /* visited link */
+.white:hover {color:#FFFFFF;}  /* mouse over link */
+.white:active {color:#FFFFFF;}  /* selected link */
+
+.maxWidth800
+{
+  max-width: 800px;
+}
+
+.centerScroll
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.disableHighlighting
+{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hr 
+{
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+}
+
+.verticalGoogle
+{
+  margin-top: 5px;
+  margin-right: 25px;
+}
+
+.content 
+{
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  @include border-radius(0 0 6px 6px);
+  @include box-shadow(0 1px 2px rgba(0,0,0,0.15));
+}
+
+.padBottomOfPage
+{
+  margin-bottom: 100px;
+}
+
+.imageWidth100
+{
+  width:100%;
+}
+
+.maxHeight250
+{
+  min-height: 200px;
+  max-height: 250px;
+}
+
+.imageHeight100
+{
+  max-height:100%;
+}
+
+.up3
+{
+  margin-top: -3px;
+}
+
+.up5
+{
+  margin-top: -5px;
+}
+
+.down3
+{
+  margin-top: 3px;
+}
+
+.down5
+{
+  margin-top: 5px;
+}
+
+.up10
+{
+  margin-top: -10px;
+}
+
+.bottom-5
+{
+  margin-bottom: -5px;
+}
+
+.bottom-10
+{
+  margin-bottom: -10px;
+}
+
+.bottom5
+{
+  margin-bottom: 5px;
+}
+
+.bottom10
+{
+  margin-bottom: 10px;
+}
+
+.width200
+{
+  width: 200px;
+}
+
+.width300
+{
+  width: 300px;
+}
+
+.height200
+{
+  height: 200px;
+}
+
+.italic 
+{
+  font-style:italic;
+}

@@ -1,0 +1,23 @@
+.maxWidth800.centerScroll
+  .well
+    %h3.up5 Contact Us
+    %form{role: "form", action: "/messages", method: "post"}
+
+      .form-group
+        %label{for: "firstName"} First Name
+        %input#firstName.form-control{placeholder: "First Name", type: "fisrt_name", name: "first_name"}
+
+      .form-group
+        %label{for: "lastName"} Last Name
+        %input#lastName.form-control{placeholder: "Last Name", type: "last_name", name: "last_name"}
+
+      .form-group
+        %label{for: "email"} Email Address
+        %input#email.form-control{placeholder: "Email", type: "email", name: "email"}
+
+      .form-group
+        %label{for: "message"} Message
+        %textarea#message.form-control{rows: "5", placeholder: "Message Text.", name: "message"}
+      - if current_user != nil
+        %input{:type=>"hidden", :value => current_user.id, :name => :username}
+      %button.btn.btn-large.btn-primary{type: "submit"} Send

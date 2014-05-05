@@ -1,0 +1,11 @@
+.container
+  .content.thinWindow
+    %form.form-signin{action: "login", method: "post"}
+      %h2.form-signin-heading.up5 Please sign in
+      .form-group
+        %label{for: "EmailInput"} Email Address
+        %input#EmailInput.form-control{placeholder: "Email Address", type: "email", name: "email"}
+      .form-group
+        %label{for: "PasswrodInput"} Password
+        %input#PasswrodInput.form-control{placeholder: "Password", type: "password", name: "password"}
+      %button.btn.btn-large.btn-primary.imageWidth100{type: "submit"} Sign in

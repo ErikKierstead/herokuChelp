@@ -1,0 +1,69 @@
+.centerScroll.maxWidth800
+
+  %h2.down-10 #{@user.first_name} #{@user.last_name}
+  .hr.up10
+  .tabbable
+    / Only required for left/right tabs
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", href: "#tab1"} User
+
+      - if @user == current_user && current_user.permissions == "Admin"
+        %li
+          %a{"data-toggle" => "tab", href: "#tab2"} Admin
+
+    .tab-content
+      #tab1.tab-pane.active.bottom10
+        .col-md-3.col-lg-3
+          %img.imageWidth100.maxHeight250.pull-right{:src => @user.get_picture(300)}
+        .col-md-9.col-lg-9
+          .well
+            %h2.up5 Bio
+            %p First Name: #{@user.first_name}
+            %p Last Name: #{@user.last_name}
+            %p Email address: #{@user.email}
+            %p Join Date: #{@user.created_at}
+          .well
+            %h2.up5 Reviews
+            -@reviews.each do |review|
+              -charity = Charity.find review.charity_id
+              %div{onclick: "window.location='#{charity_path(charity.id)}';", style: "cursor: pointer;"}
+                .well
+                  %img.bottom10.imageWidth100{:src => charity.charity_image}
+                  .hr
+                  %h3.up5 #{review.title}
+                  %p 
+                  %p #{review.description}
+                  %p 
+                  %p 
+                  %p.italic.pull-right #{review.created_at}
+
+          
+      - if @user == current_user && current_user.permissions == "Admin"
+        #tab2.tab-pane
+          -# Admin Page
+          %h2 Users
+          -@users.each do |user|
+            .well
+              .col-md-1.col-lg-1
+                %p #{user.permissions}
+              .col-md-5.col-lg-5
+                %a{href: user_path(user)} #{user.first_name} #{user.last_name}
+              .col-md-6.col-lg-6
+
+                - if user.permissions == "User"
+                  %td= link_to 'Promote To Admin', user, :method => :patch, class: "btn btn-default btn-sm up10 pull-right"
+                  %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default btn-sm up10 pull-right"
+              %p 
+          %h2 Messages
+          -@messages.each do |message|
+            .well
+              %h3.up5 #{message.first_name} #{message.last_name}
+              %h6.up3 #{message.email}
+              .hr
+              %p.up5 #{message.message}
+
+
+
+
+
