@@ -35,6 +35,8 @@ group :production do
   gem 'rails_12factor'
   gem 'bootstrap-sass', '2.3.2.0'
   gem "omniauth-google-oauth2", "~> 0.2.1"
+  gem 'sprockets', '2.11.0'
+  gem 'turbolinks'
 end
 
 # Gems used only for assets and not required
